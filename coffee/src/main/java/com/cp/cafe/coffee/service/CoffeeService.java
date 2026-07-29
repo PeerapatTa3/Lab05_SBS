@@ -59,4 +59,14 @@ public class CoffeeService {
     public boolean deleteCoffee(int id) {
         return coffees.removeIf(coffee -> coffee.getId() == id);
     }
+
+    public List<Coffee> searchCoffeeByName(String name) {
+        List<Coffee> results = new ArrayList<>();
+        for (Coffee coffee : coffees) {
+            if (coffee.getName().toLowerCase().contains(name.toLowerCase())) {
+                results.add(coffee);
+            }
+        }
+        return results;
+    }
 }

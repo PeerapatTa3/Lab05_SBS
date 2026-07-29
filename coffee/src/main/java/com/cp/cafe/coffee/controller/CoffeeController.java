@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cp.cafe.coffee.model.Coffee;
@@ -28,6 +29,11 @@ public class CoffeeController {
     @GetMapping
     public List<Coffee> getAllCoffees() {
         return coffeeService.getAllCoffees();
+    }
+
+    @GetMapping("/search")
+    public List<Coffee> searchCoffee(@RequestParam String name) {
+        return coffeeService.searchCoffeeByName(name);
     }
 
     @GetMapping("/{id}")
