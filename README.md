@@ -43,3 +43,8 @@ curl -X PUT http://localhost:8080/coffees/2 \
 ```bash
 curl -X DELETE http://localhost:8080/coffees/3
 ```
+
+### Bonus: 404
+```bash
+curl -i http://localhost:8080/coffees/999
+```
