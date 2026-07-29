@@ -49,10 +49,12 @@ curl -X DELETE http://localhost:8080/coffees/3
 ```
 <img width="940" height="104" alt="image" src="https://github.com/user-attachments/assets/d7a90742-f3d8-43d4-bd0a-f7d7e8b9d9f6" />
 
-### Bonus: 404
+### Bonus เพิ่ม ค้นหาเมนูตามชื่อ 
 ```bash
-curl -i http://localhost:8080/coffees/999
+curl.exe http://localhost:8080/coffees/search?name=Latte
 ```
+<img width="940" height="77" alt="image" src="https://github.com/user-attachments/assets/eddc1882-d651-4604-b8de-2f31627909e7" />
+
 ### Discussion
 1.	HTTP method แต่ละตัว (GET/POST/PUT/DELETE) ต่างกันอย่างไร ยกตัวอย่างจากโปรเจกต์ตัวเอง
 ตอบ	GET ดึงข้อมูล — @GetMapping("/coffees") ดึงรายการกาแฟทั้งหมด
