@@ -56,18 +56,21 @@ curl.exe http://localhost:8080/coffees/search?name=Latte
 <img width="940" height="77" alt="image" src="https://github.com/user-attachments/assets/eddc1882-d651-4604-b8de-2f31627909e7" />
 
 ### Discussion
-1.	HTTP method แต่ละตัว (GET/POST/PUT/DELETE) ต่างกันอย่างไร ยกตัวอย่างจากโปรเจกต์ตัวเอง
-ตอบ	GET ดึงข้อมูล — @GetMapping("/coffees") ดึงรายการกาแฟทั้งหมด
-POST สร้างใหม่ — @PostMapping("/coffees") เพิ่มเมนูใหม่พร้อมส่ง JSON
-PUT แก้ไข — @PutMapping("/{id}") อัปเดตข้อมูลเดิม เช่นเปลี่ยนราคา
-DELETE ลบ — @DeleteMapping("/{id}") ลบเมนูออกจาก List
-2.	ทำไมต้องแยก Controller กับ Service ออกจากกัน มีข้อดีอย่างไรถ้าโปรแกรมโตขึ้น
+1.	HTTP method แต่ละตัว (GET/POST/PUT/DELETE) ต่างกันอย่างไร ยกตัวอย่างจากโปรเจกต์ตัวเอง\
+ตอบ	GET ดึงข้อมูล — @GetMapping("/coffees") ดึงรายการกาแฟทั้งหมด\
+      POST สร้างใหม่ — @PostMapping("/coffees") เพิ่มเมนูใหม่พร้อมส่ง JSON\
+      PUT แก้ไข — @PutMapping("/{id}") อัปเดตข้อมูลเดิม เช่นเปลี่ยนราคา\
+      DELETE ลบ — @DeleteMapping("/{id}") ลบเมนูออกจาก List\
+
+3.	ทำไมต้องแยก Controller กับ Service ออกจากกัน มีข้อดีอย่างไรถ้าโปรแกรมโตขึ้น\
 ตอบ ถ้าไม่แยก Controller จะเก็บข้อมูล + logic ตั้งหลายแห่ง หลังจากนี้แก้ bug ยาก สามารถทดสอบยากด้วย แยกแล้วแต่ละตัวดูแลตัวเอง Controller แค่รับ request ส่วน Service ดูแล business logic เฉพาะ
-3.	ข้อมูลที่เก็บไว้ใน List ใน memory หายไปตอนไหน และถ้าอยากให้ไม่หายควรทำอย่างไร (ตอบเป็นแนวคิดพอ)
+
+4.	ข้อมูลที่เก็บไว้ใน List ใน memory หายไปตอนไหน และถ้าอยากให้ไม่หายควรทำอย่างไร (ตอบเป็นแนวคิดพอ)\
 ตอบ ตอนปิด app ข้อมูลใน memory หายทั้งหมด ถ้าไม่อยากให้หาย ต้องเก็บลงฐานข้อมูล (Database) หรือบันทึกเป็นไฟล์
-4.	@RestController, @GetMapping, @PostMapping, @PathVariable, @RequestBody แต่ละตัวทำหน้าที่อะไร
-ตอบ 	@RestController บอก Spring ว่านี่ endpoint ที่ return JSON
-@GetMapping / @PostMapping / @PutMapping / @DeleteMapping สร้าง endpoint ตามข้อมูล method
-@PathVariable ดึงค่าจาก URL เช่น /coffees/{id} ได้ id มาใช้
-@RequestBody แปลง JSON จาก request body เป็น object
+
+5.	@RestController, @GetMapping, @PostMapping, @PathVariable, @RequestBody แต่ละตัวทำหน้าที่อะไร\
+ตอบ 	@RestController บอก Spring ว่านี่ endpoint ที่ return JSON\
+      @GetMapping / @PostMapping / @PutMapping / @DeleteMapping สร้าง endpoint ตามข้อมูล method\
+      @PathVariable ดึงค่าจาก URL เช่น /coffees/{id} ได้ id มาใช้\
+      @RequestBody แปลง JSON จาก request body เป็น object\
 
