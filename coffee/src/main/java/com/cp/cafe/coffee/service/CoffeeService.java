@@ -3,13 +3,16 @@ package com.cp.cafe.coffee.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.cp.cafe.coffee.model.Coffee;
 
-public class Service {
+@Service
+public class CoffeeService {
     private final List<Coffee> coffees = new ArrayList<>();
     private int nextId = 1;
 
-    public Service() {
+    public CoffeeService() {
         addCoffee(new Coffee("Espresso", 45.0));
         addCoffee(new Coffee("Latte", 55.0));
     }
