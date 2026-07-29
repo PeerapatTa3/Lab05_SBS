@@ -1,14 +1,20 @@
 package com.cp.cafe.coffee.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({"id", "name", "price"})
 public class Coffee {
     private int id;
     private String name;
     private double price;
 
+    public Coffee() {
+    }
+
     public Coffee(String name, double price) {
+        this.id = 0;
         this.name = name;
         this.price = price;
-        this.id = 0; 
     }
 
     public String getName() {
